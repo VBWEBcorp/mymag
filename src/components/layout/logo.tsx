@@ -1,4 +1,4 @@
-import { Sparkles } from 'lucide-react'
+import { BookOpen } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 import { cn } from '@/lib/utils'
@@ -17,9 +17,9 @@ export function Logo({ className }: LogoProps) {
       )}
     >
       <span className="flex size-9 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/15 transition-transform duration-300 group-hover:scale-[1.03]">
-        <Sparkles className="size-[18px]" aria-hidden />
+        <BookOpen className="size-[18px]" aria-hidden />
       </span>
-      <span>Mymag</span>
+      <span>myMag</span>
     </Link>
   )
 }

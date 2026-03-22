@@ -1,12 +1,12 @@
 export const siteConfig = {
-  name: 'Mymag',
+  name: 'myMag',
   url: 'https://mymag.app',
-  locale: 'fr_FR',
+  locale: 'en_US',
   description:
-    'Mymag — interface SaaS premium, modulaire et prête pour la croissance. Base React, TypeScript, Tailwind, shadcn/ui.',
+    'myMag — Create personalized, professionally printed magazines in minutes with AI. From Zurich, for the world.',
   ogImage: 'https://mymag.app/og.png',
   twitterHandle: '@mymag',
-  themeColor: '#6d28d9',
+  themeColor: '#4a90d9',
 } as const
 
 export type SeoMeta = {
@@ -24,4 +24,4 @@ export function buildTitle(page?: string) {
   return `${page} — ${siteConfig.name}`
 }
 
-export const routes = ['/', '/features', '/pricing'] as const
+export const routes = ['/', '/create'] as const

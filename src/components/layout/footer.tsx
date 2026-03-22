@@ -5,27 +5,27 @@ import { Separator } from '@/components/ui/separator'
 
 const cols = [
   {
-    title: 'Produit',
+    title: 'Product',
     links: [
-      { label: 'Vue d’ensemble', href: '#product' },
-      { label: 'Intégrations', href: '#features' },
-      { label: 'Sécurité', href: '#features' },
+      { label: 'Categories', href: '#categories' },
+      { label: 'Features', href: '#features' },
+      { label: 'Pricing', href: '#' },
     ],
   },
   {
-    title: 'Ressources',
+    title: 'Resources',
     links: [
-      { label: 'Documentation', href: '#' },
+      { label: 'FAQ', href: '#' },
       { label: 'Blog', href: '#' },
       { label: 'Support', href: '#' },
     ],
   },
   {
-    title: 'Légal',
+    title: 'Legal',
     links: [
-      { label: 'Confidentialité', href: '#' },
-      { label: 'Conditions', href: '#' },
-      { label: 'Mentions', href: '#' },
+      { label: 'Privacy', href: '#' },
+      { label: 'Terms', href: '#' },
+      { label: 'Imprint', href: '#' },
     ],
   },
 ] as const
@@ -38,11 +38,12 @@ export function Footer() {
           <div className="space-y-5">
             <Logo />
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-              Une base UI premium pour lancer vos produits avec une esthétique
-              alignée sur les meilleures références SaaS modernes.
+              Create professional-quality personalized magazines
+              in minutes with the power of AI.
+              Printed in Switzerland, delivered across Europe.
             </p>
           </div>
-          <nav aria-label="Liens du pied de page" className="grid gap-10 sm:grid-cols-3">
+          <nav aria-label="Footer links" className="grid gap-10 sm:grid-cols-3">
             {cols.map((c) => (
               <div key={c.title} className="space-y-4">
                 <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
@@ -67,18 +68,18 @@ export function Footer() {
         <Separator className="my-10 bg-border/80" />
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Mymag. Tous droits réservés.
+            © {new Date().getFullYear()} myMag — Zurich, Switzerland. All rights reserved.
           </p>
           <ul className="flex flex-wrap gap-4 text-sm text-muted-foreground">
             <li>
               <Link className="hover:text-foreground" to="/">
-                Accueil
+                Home
               </Link>
             </li>
             <li>
-              <a className="hover:text-foreground" href="#cta">
-                Démo
-              </a>
+              <Link className="hover:text-foreground" to="/create">
+                Create
+              </Link>
             </li>
           </ul>
         </div>

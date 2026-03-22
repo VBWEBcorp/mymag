@@ -1,14 +1,14 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Logo } from '@/components/layout/logo'
-import { ThemeToggle } from '@/components/theme/theme-toggle'
 import { Button } from '@/components/ui/button'
 
 const links = [
-  { href: '#product', label: 'Produit' },
-  { href: '#features', label: 'Fonctionnalités' },
-  { href: '#pricing', label: 'Tarifs' },
+  { href: '#categories', label: 'Categories' },
+  { href: '#features', label: 'Features' },
+  { href: '#', label: 'Pricing (soon)' },
 ] as const
 
 export function Navbar() {
@@ -21,7 +21,7 @@ export function Navbar() {
 
         <nav
           className="hidden items-center gap-1 md:flex"
-          aria-label="Navigation principale"
+          aria-label="Main navigation"
         >
           {links.map((l) => (
             <a
@@ -35,17 +35,15 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
-          <ThemeToggle />
-          <Button variant="ghost" size="sm" asChild>
-            <a href="#login">Connexion</a>
+          <Button variant="ghost" size="sm">
+            Sign in
           </Button>
           <Button size="sm" asChild>
-            <a href="#cta">Essayer gratuitement</a>
+            <Link to="/create">Create a magazine</Link>
           </Button>
         </div>
 
         <div className="flex items-center gap-1 md:hidden">
-          <ThemeToggle />
           <Button
             type="button"
             variant="ghost"
@@ -53,7 +51,7 @@ export function Navbar() {
             className="rounded-full"
             aria-expanded={open}
             aria-controls="mobile-nav"
-            aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
+            aria-label={open ? 'Close menu' : 'Open menu'}
             onClick={() => setOpen((v) => !v)}
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
@@ -83,15 +81,13 @@ export function Navbar() {
                 </a>
               ))}
               <div className="mt-2 flex flex-col gap-2 border-t border-border/60 pt-4">
-                <Button variant="outline" asChild>
-                  <a href="#login" onClick={() => setOpen(false)}>
-                    Connexion
-                  </a>
+                <Button variant="outline">
+                  Sign in
                 </Button>
                 <Button asChild>
-                  <a href="#cta" onClick={() => setOpen(false)}>
-                    Essayer gratuitement
-                  </a>
+                  <Link to="/create" onClick={() => setOpen(false)}>
+                    Create a magazine
+                  </Link>
                 </Button>
               </div>
             </div>
