@@ -49,6 +49,18 @@ export function HomePage() {
         </p>
       </motion.div>
 
+      {/* Big Monkey */}
+      <motion.div
+        initial={{ scale: 0, rotate: -20 }}
+        animate={{ scale: 1, rotate: 0 }}
+        transition={{ type: 'spring', stiffness: 200, damping: 15, delay: 0.3 }}
+        className="my-8"
+      >
+        <span className="text-[10rem] leading-none select-none drop-shadow-lg">
+          🐒
+        </span>
+      </motion.div>
+
       {/* Magazine covers grid */}
       <div className="mx-auto mt-10 grid w-full max-w-4xl grid-cols-2 gap-5 sm:gap-8 lg:grid-cols-4">
         {COVERS.map(({ id, label, Cover }, i) => (
